@@ -1,0 +1,55 @@
+.ChiffresCles {
+  background: url("../images/fond.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+
+  h1 {
+    padding-top: 30px;
+    margin: 0;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .contenu {
+    display: flex;
+    padding: 0 80px;
+    margin: 90px 0 auto auto;
+    justify-content: center;
+  }
+
+  .ecran {
+    border-image-slice: 152 120 158 121;
+    border-image-width: 40px 40px 40px 40px;
+    border-image-outset: 40px 40px 30px 40px;
+    border-image-repeat: stretch stretch;
+    border-image-source: url("../images/cadre.png");
+    background-color: rgb(0, 0, 0);
+    border-style: solid;
+  }
+
+  .liste {
+    margin-left: 40px;
+  }
+
+  .liste ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    button {
+      background-color: #fff;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 10px;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+    }
+  }
+}

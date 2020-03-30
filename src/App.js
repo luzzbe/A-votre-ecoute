@@ -1,26 +1,61 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-function App() {
+import FullScreen from "react-full-screen";
+import Navbar from "./components/Navbar";
+import Accueil from "./pages/Accueil";
+import Video from "./pages/Video";
+import ChiffresCles from "./pages/ChiffresCles";
+import DifferentsAssistants from "./pages/DifferentsAssistants";
+
+const App = () => {
+  const [isMuted, setIsMuted] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Route
+        render={({ location }) => (
+          <FullScreen
+            enabled={isFullscreen}
+            onChange={isFullscreen => setIsFullscreen(isFullscreen)}
+          >
+            <div className="App">
+              <Navbar
+                setIsFullscreen={setIsFullscreen}
+                isFullscreen={isFullscreen}
+                isMuted={isMuted}
+                setIsMuted={setIsMuted}
+              />
+              <TransitionGroup>
+                <CSSTransition
+                  key={location.key}
+                  classNames="page"
+                  timeout={{
+                    enter: 300,
+                    exit: 300
+                  }}
+                >
+                  <main className="main">
+                    <Switch>
+                      <Route path="/chiffres-cles" component={ChiffresCles} />
+                      <Route
+                        path="/differents-assistants"
+                        component={DifferentsAssistants}
+                      />
+                      <Route path="/accueil" component={Accueil} />
+                      <Route path="/" component={Video} />
+                    </Switch>
+                  </main>
+                </CSSTransition>
+              </TransitionGroup>
+            </div>
+          </FullScreen>
+        )}
+      />
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,73 @@
+.DifferentsAssistants {
+  background: url("../images/fond.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+
+  .model3d {
+    height: 300px;
+  }
+
+  model-viewer {
+    width: 100%;
+    height: 400px;
+    background-color: #70bcd1;
+  }
+
+  h1 {
+    padding-top: 30px;
+    margin: 0;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .contenu {
+    display: flex;
+    padding: 0 50px;
+    justify-content: center;
+    align-items: flex-end;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 90px;
+
+      &:hover .action-btn {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+
+      .assistant {
+        height: 250px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        height: 60px;
+        width: auto;
+        align-self: center;
+        margin-top: 30px;
+      }
+
+      .action-btn {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        font-size: 2rem;
+        width: 70px;
+        height: 70px;
+        margin: 0 auto;
+        border-radius: 50%;
+        border: none;
+        background-color: #172c86;
+        justify-content: center;
+        margin-bottom: 20px;
+        transition: all 0.3s;
+      }
+    }
+  }
+}
