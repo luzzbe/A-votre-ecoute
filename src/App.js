@@ -6,7 +6,6 @@ import FullScreen from "react-full-screen";
 import Navbar from "./components/Navbar";
 import Accueil from "./pages/Accueil";
 import Video from "./pages/Video";
-import ChiffresCles from "./pages/ChiffresCles";
 import DifferentsAssistants from "./pages/DifferentsAssistants";
 
 const App = () => {
@@ -17,17 +16,9 @@ const App = () => {
     <BrowserRouter>
       <Route
         render={({ location }) => (
-          <FullScreen
-            enabled={isFullscreen}
-            onChange={isFullscreen => setIsFullscreen(isFullscreen)}
-          >
+          <FullScreen enabled={isFullscreen} onChange={isFullscreen => setIsFullscreen(isFullscreen)}>
             <div className="App">
-              <Navbar
-                setIsFullscreen={setIsFullscreen}
-                isFullscreen={isFullscreen}
-                isMuted={isMuted}
-                setIsMuted={setIsMuted}
-              />
+              <Navbar setIsFullscreen={setIsFullscreen} isFullscreen={isFullscreen} isMuted={isMuted} setIsMuted={setIsMuted} />
               <TransitionGroup>
                 <CSSTransition
                   key={location.key}
@@ -39,11 +30,8 @@ const App = () => {
                 >
                   <main className="main">
                     <Switch>
-                      <Route path="/chiffres-cles" component={ChiffresCles} />
-                      <Route
-                        path="/differents-assistants"
-                        component={DifferentsAssistants}
-                      />
+                      {/* <Route path="/chiffres-cles" component={ChiffresCles} /> */}
+                      <Route path="/differents-assistants" component={DifferentsAssistants} />
                       <Route path="/accueil" component={Accueil} />
                       <Route path="/" component={Video} />
                     </Switch>
