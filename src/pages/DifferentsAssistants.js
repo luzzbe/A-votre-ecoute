@@ -4,7 +4,7 @@ import "./DifferentsAssistants.scss";
 
 import Unity, { UnityContent } from "react-unity-webgl";
 
-const unityContent = new UnityContent("AVE/Build.json", "AVE/UnityLoader.js", { adjustOnWindowResize: true });
+const unityContent = new UnityContent("AVE/Build.json", "AVE/UnityLoader.js", { unityVersion: "2019.2.9", adjustOnWindowResize: true });
 
 class DifferentsAssistants extends Component {
   render() {
