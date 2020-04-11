@@ -7,22 +7,27 @@
   h1 {
     padding-top: 30px;
     margin: 0;
-    font-size: 3rem;
+    font-size: 4rem;
     color: #fff;
     text-shadow: 1px 1px 2px #000;
 
-    text-align: center;
+    text-align: left;
+    margin-left: 80px;
     text-transform: uppercase;
+
+    span {
+      font-weight: normal;
+    }
   }
 
   .contenu {
     display: flex;
     padding: 0 50px;
     justify-content: center;
-    align-items: flex-end;
-  }
+    align-items: center;
 
-  .unityFrame {
-    border: none;
+    img {
+      height: 70vh;
+    }
   }
 }

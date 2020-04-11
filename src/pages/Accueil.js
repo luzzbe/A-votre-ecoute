@@ -23,12 +23,14 @@ const Accueil = () => {
       speech.transcript.includes("différents assistant") ||
       speech.transcript.includes("différent assistants") ||
       speech.transcript.includes("différences assistant") ||
-      speech.transcript.includes("différence assistant")
+      speech.transcript.includes("différence assistant") ||
+      speech.transcript.includes("principes aux assistants") ||
+      speech.transcript.includes("principaux assistants")
     ) {
       history.push("/differents-assistants");
     }
 
-    if (speech.transcript.includes("risques")) {
+    if (speech.transcript.includes("risques") || speech.transcript.includes("risque")) {
       history.push("/risques");
     }
   });
