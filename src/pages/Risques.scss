@@ -7,11 +7,11 @@
   h1 {
     padding-top: 30px;
     margin: 0;
-    font-size: 3rem;
+    font-size: 4rem;
     color: #fff;
     text-shadow: 1px 1px 2px #000;
 
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
   }
 
@@ -20,5 +20,68 @@
     padding: 0 50px;
     justify-content: center;
     align-items: flex-end;
+    padding-top: 60px;
+  }
+
+  .left {
+    align-self: center;
+    width: 300px;
+
+    ul {
+      margin-top: 50px;
+    }
+
+    li {
+      position: relative;
+      line-height: 4rem;
+      color: white;
+      list-style: none;
+
+      &.active:after {
+        content: "";
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        width: 150px;
+        height: 10px;
+        opacity: 0.9;
+        background-color: #0f3c80;
+      }
+
+      a {
+        text-decoration: none;
+        font-size: 1.8rem;
+        color: inherit;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .right {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    line-height: 2.3rem;
+    margin-left: 40px;
+    min-height: 580px;
+  }
+
+  .listenBtn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    padding: 15px;
+    background-color: #0f3c80;
+    color: white;
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
   }
 }
